@@ -1,27 +1,26 @@
 //part 1. Import libraries we need to create a component
 import React from 'react';
-import { Text, StyleSheet ,View} from 'react-native';
+import { Text, StyleSheet ,View } from 'react-native';
 
 //part 2. Create a component - a function that returns some 'JSX'
-const ComponentsScreen = () => { 
-    const greeting = <Text>Hello to you</Text>;
-    const greeting2 = ['aaa', 'bbb'];
-    
+const ComponentsScreen = () => {  
+    const myname = 'Arden';
+
     return (
         <View>
-            <Text style={styles.textStyle}>This is the components screen</Text> 
-            <Text>{greeting}</Text>   
-            <Text>{greeting2}</Text> 
-            <Text>Hello to you</Text> 
-            {greeting} 
+           <Text style = {styles.textStyle}>Getting started with react native!</Text>
+            <Text style = {styles.namestyle}>My name is {myname}</Text> 
         </View>
-    );  
+    );
 };
 
 //part 3. Create a stylesheet to style our component
 const styles = StyleSheet.create({
     textStyle : {
-        fontSize: 25
+        fontSize: 45
+    },
+    namestyle : {
+        fontSize: 20
     }
 });
 
