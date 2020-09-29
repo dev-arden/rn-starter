@@ -11,15 +11,17 @@ import ComponentsScreen from './src/screens/ComponentsScreen';
 //decides what contents we gonna show on the screen
 const navigator = createStackNavigator(
   {
-    Home: HomeScreen, //first object
-    Components : ComponentsScreen //second object
+    Home: HomeScreen, 
+    Components : ComponentsScreen 
   },
+  //first object
   {
     initialRouteName: "Components",
     defaultNavigationOptions: {
       title: "App"
     }
   }
+  //second object
 );
 
 export default createAppContainer(navigator);

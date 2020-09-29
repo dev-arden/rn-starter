@@ -1,13 +1,21 @@
 //part 1. Import libraries we need to create a component
-import React from 'react';//react : how different components work together
-import { Text, StyleSheet } from 'react-native';//react-native : react랑은 완전히 다름
+import React from 'react';
+import { Text, StyleSheet ,View} from 'react-native';
 
 //part 2. Create a component - a function that returns some 'JSX'
-const ComponentsScreen = () => {
-    return <Text style={styles.textStyle}>This is the components screen</Text>;
-    //react-native bundler가 이 코드를 javascript로 변형?함. (babeljs.io에서 확인 가능)
-    //저 코드가 jsx인 듯, jsx가 더 쉽고 변형하기 쉽다. 
-    // JSX = dialect of javascript that tells React what content we want to show
+const ComponentsScreen = () => { 
+    const greeting = <Text>Hello to you</Text>;
+    const greeting2 = ['aaa', 'bbb'];
+    
+    return (
+        <View>
+            <Text style={styles.textStyle}>This is the components screen</Text> 
+            <Text>{greeting}</Text>   
+            <Text>{greeting2}</Text> 
+            <Text>Hello to you</Text> 
+            {greeting} 
+        </View>
+    );  
 };
 
 //part 3. Create a stylesheet to style our component
