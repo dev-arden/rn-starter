@@ -18,7 +18,7 @@ const navigator = createStackNavigator(
   },
   //first object
   {
-    initialRouteName: "List",
+    initialRouteName: "Home",
     defaultNavigationOptions: {
       title: "App"
     }
