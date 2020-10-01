@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 1027,
-  "expoServerNgrokUrl": "https://mr-gt3.anonymous.rn-starter.exp.direct",
-  "packagerNgrokUrl": "https://packager.mr-gt3.anonymous.rn-starter.exp.direct",
-  "ngrokPid": 9661,
+  "packagerPid": 3182,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
