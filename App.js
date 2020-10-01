@@ -4,6 +4,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ComponentsScreen from './src/screens/ComponentsScreen';
 import ListScreen from './src/screens/ListScreen';
 import ImageScreen from './src/screens/ImageScreen'
+import CounterScreen from './src/screens/CounterScreen';
 //how to show componentsscreen. ./ = current directory
 
 //what's that 'appNavigator' in the 'App.js' file?
@@ -16,7 +17,8 @@ const navigator = createStackNavigator(
     Home: HomeScreen, 
     Components : ComponentsScreen ,
     List : ListScreen ,
-    Image : ImageScreen
+    Image : ImageScreen,
+    Counter : CounterScreen
   },
   //first object
   {
