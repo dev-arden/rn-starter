@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, Button, FlatList } from 'react-native';
 
 const ColorScreen = () => {
   const [colors, setColors] = useState([]);//update the colors using the setColors
@@ -7,16 +7,21 @@ const ColorScreen = () => {
 
 
   return (
-  <View>
-    <Button title="Add a Color" onPress={ () => {
-      setColors([...colors, randomRgb()]) 
-      //[]는 새로운 배열이라는 의미임.
-      //...colors = take a look at the colors array, take all the elements inside there. amd add them inside that neww array
-    }}/>
-    <View 
-      style={{ height:100, width:100, backgroundColor:randomRgb() }} 
-    />
-  </View>
+    <View>
+      <Button title="Add a Color" onPress={ () => {
+        setColors([...colors, randomRgb()]); 
+      }}/>
+    
+      <FlatList
+        keyExtractor = {(item)=> item}
+        data = {colors}
+        renderItem={({item})=>{
+          return (
+            <View style={{ height:100, width:100, backgroundColor:randomRgb() }} />
+          );
+        }}
+      />
+    </View>
   );
 };
 
