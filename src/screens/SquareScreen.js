@@ -5,16 +5,10 @@ import ColorCounter from '../components/ColorCounter';
 const COLOR_INCREMENT = 15;
 
 const reducer = (state, action) => {
-  //state === {red: number, green : number, blue : number};
-  //action === {colorToChange: 'red' || 'green' || 'blue', amount : 15 || -15}
 
   switch (action.colorToChange){
     case 'red': 
       return {...state, red: state.red + action.amount };
-      //never going to do: state.red = state.red -15;
-      //we never going to modify state values directly. so same thing inside reducer
-      // ...state == { red : 0, green:0, blue :0}
-      //return {green:0, blue :0, red: state.red + action.amount} -> 레드는 override
     case 'green':
       return {...state, green: state.green + action.amount };
     case 'blue':
@@ -23,37 +17,36 @@ const reducer = (state, action) => {
       return state;
   }
 };
-//리듀서를 밖으로 뺀 이유는 한 컴포넌트 안에 state라고 불리는 두개의 다른 변수가 있으면, 에러는 안나지만 혼란스러울 수 잇음
-//action = how to change state object
+
 const SquareScreen = () => {
   const [state, dispatch] = useReducer(reducer, { red : 0, green:0, blue :0});
-  console.log(state)//{ red : 0, green:0, blue :0}
-  //state == red, green, blue
-  //staet == how we access all different state values. 
-  //우리는 원래, 세 개의 다른 스테이트를 가지고 있었지만, 이제는 그 대신 하나의 오브젝트로 결합된거지.
+  //dispatch의 의미는 runMyReducer고, 디스패치는 will be provided as action(위에 우리가 작서한 reducer의 second argument로)
+  //그래서 위의 reducer함수 안에서는 decide how to change our state.
+  const {red, green, blue} = state;
+  //혼란스러울 수 있으니 한번 더 정의를 해준듯,
 
   return (
     <View>
       <ColorCounter 
-        onIncrease = {() => }
-        onDecrease = {() => }
+        onIncrease = {() => dispatch({ colorToChange: 'red', amount: COLOR_INCREMENT })}
+        onDecrease = {() => dispatch({ colorToChange: 'red', amount: -1 * COLOR_INCREMENT })}
         color = "Red" 
       />
       <ColorCounter 
-        onIncrease={()=>}
-        onDecrease={()=>}
+        onIncrease={()=> dispatch({ colorToChange: 'blue', amount: COLOR_INCREMENT })}
+        onDecrease={()=> dispatch({ colorToChange: 'blue', amount: -1 * COLOR_INCREMENT })}
         color = "Blue"
       />
       <ColorCounter 
-        onIncrease={()=>}
-        onDecrease={()=>}
+        onIncrease={()=> dispatch({ colorToChange: 'green', amount: COLOR_INCREMENT })}
+        onDecrease={()=> dispatch({ colorToChange: 'green', amount: -1 * COLOR_INCREMENT })}
         color = "Green"
       />
       <View 
         style={{
           height : 150, 
           width : 150, 
-          backgroundColor: `rgb(${red},${green},${blue})`
+          backgroundColor: `rgb(${state.red},${state.green},${state.blue})`
         }}>
       </View>
     </View>
