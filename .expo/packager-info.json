@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 13200,
-  "expoServerNgrokUrl": "https://e3-mu2.anonymous.rn-starter.exp.direct",
-  "packagerNgrokUrl": "https://packager.e3-mu2.anonymous.rn-starter.exp.direct",
-  "ngrokPid": 13226,
+  "packagerPid": 13646,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
