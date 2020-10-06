@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const BoxExercise = () => {
   return(
-    <View style = {styles.viewstyle}>
+    <View style = {styles.parentStyle}>
       <View style = {styles.viewOnestyle}>
       </View> 
       <View style = {styles.viewTwostyle}>
@@ -15,25 +15,28 @@ const BoxExercise = () => {
 };
 
 const styles = StyleSheet.create({
-  viewstyle:{
-    flexDirection : "row",
-    justifyContent : "space-between"
+  parentStyle:{
+    borderWidth : 3,
+    borderColor : 'black',
+    height : 100,
+    flexDirection : 'row',
+    justifyContent : 'space-between'
   },
   viewOnestyle:{
     height : 50, 
-    width : 100, 
-    backgroundColor: `rgb(255,0,0)`
+    width : 50, 
+    backgroundColor: 'red'
   },
   viewTwostyle:{
     height : 50, 
-    width : 100, 
-    backgroundColor: `rgb(0,255,0)`,
-    top: 50,
+    width : 50, 
+    backgroundColor: 'green',
+    alignSelf: 'flex-end'
   },
   viewThreestyle:{
     height : 50, 
-    width : 100, 
-    backgroundColor: `rgb(0,0,255)`,
+    width : 50, 
+    backgroundColor: 'blue',
   }
 });
 
